@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+
+  /* PolarisAI brand palette (derived from the original site accents) */
+  --color-brand-50: #f0fcfd;
+  --color-brand-100: #d7f8fa;
+  --color-brand-200: #b0f0f3;
+  --color-brand-300: #7de5e9;
+  --color-brand-400: #33cccc;
+  --color-brand-500: #16b3bc;
+  --color-brand-600: #0a95a3;
+  --color-brand-700: #0f7885;
+  --color-brand-800: #14606c;
+  --color-brand-900: #15505b;
+  --color-brand-950: #07333c;
+
+  --color-brand-blue: #0d7de8;
+  --color-brand-purple: #6c3ce0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-slate-800 antialiased;
+}
+
+/* Gradient text helper */
+.text-gradient {
+  @apply bg-gradient-to-r from-brand-500 via-brand-blue to-brand-purple bg-clip-text text-transparent;
+}
+
+/* Decorative blurred circles used in hero sections */
+.hero-glow::before,
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.hero-glow::before {
+  width: 18rem;
+  height: 18rem;
+  top: -6rem;
+  right: -4rem;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-glow::after {
+  width: 13rem;
+  height: 13rem;
+  bottom: -5rem;
+  right: 8rem;
+  background: rgba(255, 255, 255, 0.08);
+}
